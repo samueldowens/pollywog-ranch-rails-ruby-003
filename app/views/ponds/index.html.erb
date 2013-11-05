@@ -1,0 +1,10 @@
+
+<h1>Ponds</h1>
+
+<% @ponds.each do |pond| %>
+<%= link_to pond.name, pond %> 
+<br>
+<br>
+<% end %>
+
+<%= link_to "Create a New Pond", {:action=>"new", :controller=>"ponds"} %>

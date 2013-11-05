@@ -1,0 +1,19 @@
+<h1><%= @pond.name %></h1>
+
+<h2>Water Type</h2>
+<%= @pond.water_type %>
+
+<h2>Frogs & Tadpoles</h2>
+<h3>Frog</h3>
+<% @pond.frogs.each do |frog| %>
+<p>
+<%= link_to frog.name, frog %>
+</p>
+<br>
+<h3>Tadpoles</h3>
+<% frog.tadpoles.each do |tp| %>
+<%= link_to tp.name, tp %>
+<br>
+<% end %>
+<% end %>
+
