@@ -1,3 +1,5 @@
+<%= render template: "layouts/header" %>
+
 <h1><%= @pond.name %></h1>
 
 <h2>Water Type</h2>
@@ -17,3 +19,9 @@
 <% end %>
 <% end %>
 
+<%= link_to "Edit This Pond", {:action=>"edit", :controller=>"ponds"} %>
+<br>
+<%= button_to "Destroy This Pond", @pond, method: "delete" %>
+
+<%= link_to 'Back', ponds_path %>
+<%= render template: "layouts/footer" %>

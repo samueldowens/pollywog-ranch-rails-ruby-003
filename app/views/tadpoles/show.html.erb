@@ -1,0 +1,16 @@
+<%= render template: "layouts/header" %>
+
+<h1><%= @tadpole.name %></h1>
+
+<h2>Parent</h2>
+<%= link_to @tadpole.frog.name, @tadpole.frog %>
+<br>
+<br>
+<%= link_to "Edit This tadpole", {:action=>"edit", :controller=>"tadpoles"} %>
+<br>
+<%= button_to "Destroy This tadpole", @tadpole, method: "delete" %>
+<br>
+<%= button_to "EVOLVE THIS TADPOLE", {:action => "evolve", :id => @tadpole.id}, method: "post" %>
+
+<%= link_to 'Back', tadpoles_path %>
+<%= render template: "layouts/footer" %>

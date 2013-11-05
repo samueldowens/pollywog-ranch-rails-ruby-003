@@ -1,0 +1,20 @@
+<%= render template: "layouts/header" %>
+
+<%= form_for(Frog.new) do |f| %>
+  Frog Name: <%= f.text_field :name %><br />
+  Frog Color: <%= f.text_field :color %><br />
+  <!-- I want to convert this section to the rails way later -->
+  <label for="lives">Lives</label>
+  <select id="lives" name="pond_id">
+    <% @ponds.each do |pond| %>
+      <option value="<%= pond.id %>"><%= pond.name %></option>
+    <% end %>
+  </select>
+  <!-- end section -->
+
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', ponds_path %>
+<%= render template: "layouts/footer" %>

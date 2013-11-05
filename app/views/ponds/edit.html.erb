@@ -1,6 +1,6 @@
 <%= render template: "layouts/header" %>
 
-<%= form_for(Pond.new) do |p| %>
+<%= form_for(Pond.find(params[:id])) do |p| %>
   Pond Name: <%= p.text_field :name %><br />
   Water Type : <%= p.text_field :water_type %><br />
   <%= p.submit %>

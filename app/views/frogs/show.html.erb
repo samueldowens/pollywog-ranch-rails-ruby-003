@@ -1,0 +1,23 @@
+<%= render template: "layouts/header" %>
+
+<h1><%= @frog.name %></h1>
+
+<h2>Pond</h2>
+<%= link_to @pond.name, @pond %>
+
+<h2>Tadpoles</h2>
+<% @frog.tadpoles.each do |tadpole| %>
+<p>
+<%= link_to tadpole.name, tadpole %>
+</p>
+<br>
+<% end %>
+<%= link_to "Create a New Tadpole", {:action=>"new", :controller=>"tadpoles"} %>
+<br>
+<%= link_to "Edit This Frog", {:action=>"edit", :controller=>"frogs"} %>
+<br>
+<%= button_to "Destroy This Frog", @frog, method: "delete" %>
+<br>
+
+<%= link_to 'Back', ponds_path %>
+<%= render template: "layouts/footer" %>

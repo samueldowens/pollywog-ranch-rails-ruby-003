@@ -5,6 +5,10 @@ PollywogRanchRailsRuby003::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 resources :frogs, :tadpoles, :ponds
+
+post '/evolve' => 'tadpoles#evolve'
+
+root :to => 'application#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

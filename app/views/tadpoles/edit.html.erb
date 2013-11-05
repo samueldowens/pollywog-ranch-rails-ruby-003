@@ -1,0 +1,20 @@
+<%= render template: "layouts/header" %>
+
+<%= form_for(Tadpole.find(params[:id])) do |f| %>
+  Tadpole Name: <%= f.text_field :name %><br />
+  Tadpole Color: <%= f.text_field :color %><br />
+  <!-- Railsify this section -->
+  <label for="parent">Parent</label>
+  <select id="parent" name="frog_id">
+    <% @frogs.each do |frog| %>
+      <option value="<%= frog.id %>"><%= frog.name %></option>
+    <% end %>
+    <br>
+  </select>
+  <!-- end section -->
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', tadpoles_path %>
+<%= render template: "layouts/footer" %>

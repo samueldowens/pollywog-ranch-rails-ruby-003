@@ -1,0 +1,13 @@
+<%= render template: "layouts/header" %>
+
+<h1>Tadpoles</h1>
+
+<% @tadpoles.each do |tadpole| %>
+<%= link_to tadpole.name, tadpole %> 
+<br>
+<br>
+<% end %>
+
+<%= link_to "Create a New Tadpole", {:action=>"new", :controller=>"tadpoles"} %>
+
+<%= render template: "layouts/footer" %>
